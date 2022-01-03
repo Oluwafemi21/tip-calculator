@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Tip calculator Github Repo]()
+- Solution URL: [Tip calculator Github Repo](https://github.com/Oluwafemi21/tip-calculator)
 - Live Site URL: [Tip calculator](https://tip-calculator.oluwafemi21.repl.co/?bill=&people=)
 
 ## My process
