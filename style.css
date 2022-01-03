@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+:root{
+    --calc-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --text-cyan: hsl(184, 14%, 56%);
+    --bg-cyan: hsl(185, 41%, 84%);
+    --card-cyan: hsl(189, 41%, 97%);
+    --Strong-cyan: hsl(172, 67%, 45%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body{
+    background-color: var(--bg-cyan);
+    color: var(--Dark-grayish-cyan);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+/* Logo */
+header{
+    margin-bottom: 50px;
+}
+
+.card{
+  display: flex;
+  gap:20px;
+  padding:20px;
+  background-color: white;
+
+  height: 100%;
+  border-radius: 14px;
+}
+
+section h6{
+    margin: 6px 0;
+}
+
+
+/* Tip Percentages */
+.tip-content{
+  margin: 20px 0;
+}
+
+.grid-tip{
+  display: grid;
+  grid-template-columns: repeat(3,30%);
+  grid-gap: 10px;
+}
+
+.btn{
+  background-color: var(--calc-cyan);
+  color: white;
+  border: none;
+  padding:5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover,.btn.active{
+  background-color: var(--Strong-cyan);
+  color: black;
+  font-weight: 700;
+}
+
+.btn.inverted{
+  background-color: var(--card-cyan);
+  color: var(--Dark-grayish-cyan);
+  font-weight: 700;
+  outline: none;
+  text-align: center;
+  height: auto;
+}
+
+/* Bill and Number of People Input Boxes */
+
+.bill,.people{
+  background-color: var(--card-cyan);
+  display: flex;
+  align-items: center;
+  padding:0  10px;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 4px;
+  color: var(--calc-cyan);
+  cursor: pointer;
+}
+
+.bill:hover,
+.bill:focus-within,
+.people:hover,
+.people:focus-within,
+.btn.inverted:focus-within{
+    border: 2px solid var(--Strong-cyan);
+    color: var(--calc-cyan);
+}
+
+.btn.inverted:focus-within{
+    text-align: right;
+}
+
+.bill input[type=number],.people input[type=number]{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;  
+  text-align: right;
+  font-weight: 700;
+  -moz-appearance: textfield;
+  cursor: pointer;
+  color: var(--calc-cyan);
+}
+
+
+
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Tipper */
+.tipper{
+  background-color: var(--calc-cyan);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.tipper-content{
+  flex-grow: 1;
+}
+
+.tipper-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.amount{
+  display: flex;
+  align-items: center;
+  color: var(--Strong-cyan);
+  font-size: 28px;
+  font-weight: 600;
+  margin-left: 50px;
+}
+
+.sub-text{
+  display: block;
+  color: var(--text-cyan);
+  font-size: 12px;
+}
+
+input[type=reset]{
+  background-color: var(--Strong-cyan);
+  border: none;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 3px;
+  font-weight: 700;
+}
+
+input[type=reset]:hover{
+  background-color: var(--bg-cyan);
+}
+
+.people-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error{
+    color: rgb(238, 25, 53);
+    font-size: 12px;
+}
+
+/* Media Queries */
+@media (max-width:767px){
+    body{
+        height: 100%;
+        overflow: hidden;
+    }
+    header{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    form{
+        flex-grow: 1;
+    }
+    .card{
+        flex-direction: column;
+        height: calc(100vh);
+        width:100vw;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .grid-tip{
+        grid-template-columns: repeat(2,47%);
+    }
+}
